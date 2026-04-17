@@ -71,8 +71,8 @@ app = FastAPI(lifespan=lifespan)
 # Allow requests only from the same origin
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # This will be restricted by the custom middleware
-    allow_credentials=True,
+    allow_origins=["*"],  # Actual access control is enforced by the custom same-origin middleware below
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
